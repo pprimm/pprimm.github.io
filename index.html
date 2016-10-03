@@ -291,18 +291,18 @@
 <p><img src="/images/putty1.png" alt=""></p>
 <p>If connecting using the local domain works and PuTTY is connecting to the Pi Zero host for the first time, then you will see something like this:</p>
 <p><img src="/images/putty2.png" alt=""></p>
-<h4 id="If-you-don’t-see-the-above-warning-or-PuTTY-gives-you-an-error-message-that-it-can’t-open-the-connection-go-to-the-Finding-Your-Pi-Zero’s-IP-section-below-This-section-provides-several-methods-for-finding-the-IP-of-your-PI-Zero"><a href="#If-you-don’t-see-the-above-warning-or-PuTTY-gives-you-an-error-message-that-it-can’t-open-the-connection-go-to-the-Finding-Your-Pi-Zero’s-IP-section-below-This-section-provides-several-methods-for-finding-the-IP-of-your-PI-Zero" class="headerlink" title="If you don’t see the above warning or PuTTY gives you an error message that it can’t open the connection, go to the [Finding Your Pi Zero’s IP] section below.  This section provides several methods for finding the IP of your PI Zero."></a>If you don’t see the above warning or PuTTY gives you an error message that it can’t open the connection, go to the [Finding Your Pi Zero’s IP] section below.  This section provides several methods for finding the IP of your PI Zero.</h4><p>However, if you see this window, select [Yes] to continue and you will be presented with the login prompt.  The default password is [raspberry] (without the []).</p>
+<h4 id="If-you-don’t-see-the-above-warning-or-PuTTY-gives-you-an-error-message-that-it-can’t-open-the-connection-go-to-the-Finding-Your-Pi-Zero’s-IP-section-below-This-section-provides-several-methods-for-finding-the-IP-of-your-PI-Zero"><a href="#If-you-don’t-see-the-above-warning-or-PuTTY-gives-you-an-error-message-that-it-can’t-open-the-connection-go-to-the-Finding-Your-Pi-Zero’s-IP-section-below-This-section-provides-several-methods-for-finding-the-IP-of-your-PI-Zero" class="headerlink" title="If you don’t see the above warning or PuTTY gives you an error message that it can’t open the connection, go to the [Finding Your Pi Zero’s IP] section below.  This section provides several methods for finding the IP of your PI Zero."></a>If you don’t see the above warning or PuTTY gives you an error message that it can’t open the connection, go to the [Finding Your Pi Zero’s IP] section below.  This section provides several methods for finding the IP of your PI Zero.</h4><p>However, if you see this window, select [Yes] to continue and you will be presented with the login prompt.  The default password is [raspberry] (without the [ ]).</p>
 <p><img src="/images/putty3.png" alt=""></p>
 <p>Once you login, you should see something like this:</p>
 <p><img src="/images/putty4.png" alt=""></p>
 </li>
-<li><p>Open the Configuration and make any changes you would like.  You do this by entering the following command in PuTTY terminal:</p>
+<li><p>Open the Configuration Tool and make any changes you would like.  You do this by entering the following command in PuTTY terminal:</p>
 </li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo raspi-config</div></pre></td></tr></table></figure>
-<p>   Executing this command results in the configuration tool.  Now, the only configuration item we’re going to do now is expand the file system.  Select the fist item [1. Expand Filesystem] and select [Enter].  The filesystem will be expanded to used the full size of the SD Card.</p>
+<p>   Executing this command show you the configuration tool.  The only configuration item we’re going to do now is expand the file system.  Select the fist item [1. Expand Filesystem] and select [Enter].  The filesystem will be expanded to used the full size of the SD Card.</p>
 <p>   <img src="/images/raspi-config.png" alt=""></p>
-<p>   Now, just scroll down and select <finish>.  If you are asked to reboot, say Yes.  You will be logged off and PuTTY will disconnect.  Give the Pi Zero time to reboot.  Then, reconnect with PuTTY and continue to the next step.</finish></p>
+<p>   Now, just scroll down and select [Finish].  If you are asked to reboot, say Yes.  You will be logged off and PuTTY will disconnect.  Give the Pi Zero time to reboot.  Then, reconnect with PuTTY and continue to the next step.</p>
 <ol>
 <li>Perform Jessie updates by entering the following two (2) commands in the terminal; allowing a command to complete before continuing to the next.</li>
 </ol>
