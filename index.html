@@ -212,7 +212,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2016/10/02/Pi-Zero-from-Ground-Zero/">Headless Raspberry Pi Zero with Ethernet Setup from Ground Zero on Windows 8</a>
+            <a class="article-title" href="/2016/10/02/Pi-Zero-from-Ground-Zero/">Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8</a>
         </h1>
     
 
@@ -278,9 +278,9 @@
 </li>
 <li><p>Run Win32 Disk Imager as administrator and write the 2016-05-27-raspbian-jessie-lite.img file to the SD Card.</p>
 <p><img src="/images/Win32DiskImager.png" alt=""><br><strong><em>AGAIN, INSURE YOU HAVE SELECTED THE CORRECT DRIVE LETTER</em></strong></p>
+<p>Carl Recktenwald Jr. has a <a href="https://www.youtube.com/watch?v=AVM7QaSndf8" target="_blank" rel="external">YouTube Video</a> that shows using SDFormatter and Win32 Disk Imager.  You can watch up to 2:30 where then begins a boot using monitor, keyboard and mouse.  But, we’re going headless, so the remainder of that video doesn’t pertain to what we’re trying to accomplish.</p>
 </li>
 </ol>
-<p>Carl Recktenwald Jr. has a <a href="https://www.youtube.com/watch?v=AVM7QaSndf8" target="_blank" rel="external">YouTube Video</a> that shows using SDFormatter and Win32 Disk Imager.  You can watch up to 2:30 where then begins a boot using monitor, keyboard and mouse.  But, we’re going headless, so the remainder of that video doesn’t pertain to what we’re trying to accomplish.</p>
 <h1 id="Boot-the-Pi-Zero-and-Connect-with-PuTTY"><a href="#Boot-the-Pi-Zero-and-Connect-with-PuTTY" class="headerlink" title="Boot the Pi Zero and Connect with PuTTY"></a>Boot the Pi Zero and Connect with PuTTY</h1><p>Follow these steps to boot and connect to your Pi Zero over SSH:</p>
 <ol>
 <li><p>Insert the newly ripped SD Card in your Pi Zero.  The Card holder is just an interference fit socket; so, is doesn’t click or have the bounce-in/out function like some other Pi(s).</p>
@@ -297,34 +297,36 @@
 <p><img src="/images/putty4.png" alt=""></p>
 </li>
 <li><p>Open the Configuration Tool and make any changes you would like.  You do this by entering the following command in PuTTY terminal:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo raspi-config</div></pre></td></tr></table></figure>
+<p><strong>Update 2016-10-03:</strong> <em>A RasPi user notified me that starting with Jessie 2016-05-10, a script will auto-expand the file system on first boot.  You don’t need to perform this step.  But, if you are interested in bringing up the Configuration Tool and looking around, you can go ahead and continue as a learning exercise; otherwise, jump down to step 5.</em></p>
+<p>Executing this command show you the configuration tool.  The only configuration item we’re going to do now is expand the file system.  Select the fist item [1. Expand Filesystem] and select [Enter].  The filesystem will be expanded to used the full size of the SD Card.</p>
+<p><img src="/images/raspi-config.png" alt=""></p>
+<p>Now, just scroll down and select [Finish].  If you are asked to reboot, say Yes.  You will be logged off and PuTTY will disconnect.  Give the Pi Zero time to reboot.  Then, reconnect with PuTTY and continue to the next step.</p>
+</li>
+<li><p>Perform Jessie updates by entering the following two (2) commands in the terminal; allowing a command to complete before continuing to the next.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get upgrade</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo raspi-config</div></pre></td></tr></table></figure>
-<p>   Executing this command show you the configuration tool.  The only configuration item we’re going to do now is expand the file system.  Select the fist item [1. Expand Filesystem] and select [Enter].  The filesystem will be expanded to used the full size of the SD Card.</p>
-<p>   <img src="/images/raspi-config.png" alt=""></p>
-<p>   Now, just scroll down and select [Finish].  If you are asked to reboot, say Yes.  You will be logged off and PuTTY will disconnect.  Give the Pi Zero time to reboot.  Then, reconnect with PuTTY and continue to the next step.</p>
-<ol>
-<li>Perform Jessie updates by entering the following two (2) commands in the terminal; allowing a command to complete before continuing to the next.</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get upgrade</div></pre></td></tr></table></figure>
 <h1 id="Install-Git-and-NodeJS"><a href="#Install-Git-and-NodeJS" class="headerlink" title="Install Git and NodeJS"></a>Install Git and NodeJS</h1><p>Now we’re going to install Git and NodeJs.  Perform these steps:</p>
 <ol>
-<li>Install Git using the following command:</li>
-</ol>
+<li><p>Install Git using the following command:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install git</div></pre></td></tr></table></figure>
-<ol>
-<li>Install NodeJS using the following commands; allowing each to complete:</li>
-</ol>
+</li>
+<li><p>Install NodeJS using the following commands; allowing each to complete:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ wget https://nodejs.org/dist/v4.5.0/node-v4.5.0-linux-armv6l.tar.gz</div><div class="line">$ tar -xvf node-v4.5.0-linux-armv6l.tar.gz</div><div class="line">$ <span class="built_in">cd</span> node-v4.5.0-linux-armv6l</div><div class="line">$ sudo cp -R * /usr/<span class="built_in">local</span>/</div><div class="line">$ sudo reboot</div></pre></td></tr></table></figure>
 <ul>
 <li>After reboot, re-login and execute the following command to verify the NodeJS install.</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ node --version</div><div class="line">v4.5.0</div></pre></td></tr></table></figure>
+</li>
+</ol>
 <p>Now we have a Raspberry Pi Zero connected to our network and running NodeJS; ready to clone a repository and get to work.  I hope this is useful for you.</p>
 <h1 id="Finding-Your-Pi-Zero’s-IP-if-raspberrypi-local-doesn’t-work"><a href="#Finding-Your-Pi-Zero’s-IP-if-raspberrypi-local-doesn’t-work" class="headerlink" title="Finding Your Pi Zero’s IP (if raspberrypi.local doesn’t work)"></a>Finding Your Pi Zero’s IP (if raspberrypi.local doesn’t work)</h1><p>We need to perform this step only if PuTTY can’t connect using [pi@raspberrypi.local].  In that case, there are several methods we can use to find the IP of our Pi Zero.  Try one of these methods:</p>
 <ul>
-<li>One of the easiest methods is to login to your router and look at the list of connected hosts.  This might give a clue as to the new IP; especially if the raspberrypi name is listed or your other hosts are listed by name.  If it’s not clear what the IP is, then try another method.</li>
-<li>If you have an IP scanner, use it.  Chances are, if you have an IP scanner, you know how to use it and you are used to finding IPs of unknown hosts using this method.  We’re looking for an open port 22.  So, if your scanner supports particular port scans, this will focus the scan and likely give better results.</li>
+<li><p>One of the easiest methods is to login to your router and look at the list of connected hosts.  This might give a clue as to the new IP; especially if the raspberrypi name is listed or your other hosts are listed by name.  If it’s not clear what the IP is, then try another method.</p>
+</li>
+<li><p>If you have an IP scanner, use it.  Chances are, if you have an IP scanner, you know how to use it and you are used to finding IPs of unknown hosts using this method.  We’re looking for an open port 22.  So, if your scanner supports particular port scans, this will focus the scan and likely give better results.</p>
+</li>
 <li><p>Use an nmap scan <a href="https://nmap.org/download.html" target="_blank" rel="external">download</a>.  Go to the nmap download page and scroll down to Microsoft Windows binaries and locate [nmap-7.30-setup.exe].  Download and install.  This is the Zenmap GUI for Windows.  Run the program and enter [nmap -p 22 10.10.101.0/24] in the command field as shown here (replacing my LAN IP, 10.10.101.0 in this case, with yours).  </p>
 <p><img src="/images/zenmap1.png" alt=""></p>
 <p>The Target field will be filled in automatically.  Select Scan and review the results in the [Nmap Output] tab.  You are looking for an open port 22 like this:</p>
@@ -342,7 +344,7 @@
 
 </div>
 
-    <a data-url="http://pprimm.github.io/2016/10/02/Pi-Zero-from-Ground-Zero/" data-id="cittc4cyn0000g4i0dyncuu0t" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://pprimm.github.io/2016/10/02/Pi-Zero-from-Ground-Zero/" data-id="citujs9dd00004ci0xrd150q7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -472,7 +474,7 @@
 
 </div>
 
-    <a data-url="http://pprimm.github.io/2016/10/02/hello-world/" data-id="cittc4cyt0001g4i0n2rruv6n" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://pprimm.github.io/2016/10/02/hello-world/" data-id="citujs9dj00014ci0jji70hu9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -573,7 +575,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2016/10/02/Pi-Zero-from-Ground-Zero/" class="title">Headless Raspberry Pi Zero with Ethernet Setup from Ground Zero on Windows 8</a></p>
+                            <p class="item-title"><a href="/2016/10/02/Pi-Zero-from-Ground-Zero/" class="title">Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8</a></p>
                             <p class="item-date"><time datetime="2016-10-03T00:44:14.000Z" itemprop="datePublished">2016-10-02</time></p>
                         </div>
                     </li>
