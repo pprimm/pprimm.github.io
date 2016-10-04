@@ -3,30 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8 | My Technology Blog</title>
+    <title>Headless Raspberry Pi Zero Setup with Wifi Only | My Technology Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="I love the idea of using the Raspberry Pi Zero as a headless home automation IoT appliance.  Actually, using multiple Zero(s) to run independent NodeJS services sounds very appealing.  I’ve been wanti">
+    <meta name="description" content="This post is a follow up (or addendum, if you will) to Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8 which is a turorial for getting a Pi Zero running and connected to a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8">
-<meta property="og:url" content="http://pprimm.github.io/2016/10/02/Pi-Zero-from-Ground-Zero/index.html">
+<meta property="og:title" content="Headless Raspberry Pi Zero Setup with Wifi Only">
+<meta property="og:url" content="http://pprimm.github.io/2016/10/03/Pi-Zero-Headless-Wifi/index.html">
 <meta property="og:site_name" content="My Technology Blog">
-<meta property="og:description" content="I love the idea of using the Raspberry Pi Zero as a headless home automation IoT appliance.  Actually, using multiple Zero(s) to run independent NodeJS services sounds very appealing.  I’ve been wanti">
-<meta property="og:image" content="http://pprimm.github.io/images/RASP_PI_ZERO_BESCHREIBUNG2.png">
-<meta property="og:image" content="http://pprimm.github.io/images/SDFormatter1.png">
-<meta property="og:image" content="http://pprimm.github.io/images/SDFormatter2.png">
-<meta property="og:image" content="http://pprimm.github.io/images/Win32DiskImager.png">
-<meta property="og:image" content="http://pprimm.github.io/images/putty1.png">
-<meta property="og:image" content="http://pprimm.github.io/images/putty2.png">
-<meta property="og:image" content="http://pprimm.github.io/images/putty3.png">
-<meta property="og:image" content="http://pprimm.github.io/images/putty4.png">
-<meta property="og:image" content="http://pprimm.github.io/images/raspi-config.png">
-<meta property="og:image" content="http://pprimm.github.io/images/zenmap1.png">
-<meta property="og:image" content="http://pprimm.github.io/images/zenmap2.png">
-<meta property="og:updated_time" content="2016-10-04T04:53:55.405Z">
+<meta property="og:description" content="This post is a follow up (or addendum, if you will) to Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8 which is a turorial for getting a Pi Zero running and connected to a">
+<meta property="og:image" content="http://pprimm.github.io/images/extfs-1.png">
+<meta property="og:updated_time" content="2016-10-04T04:54:17.557Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8">
-<meta name="twitter:description" content="I love the idea of using the Raspberry Pi Zero as a headless home automation IoT appliance.  Actually, using multiple Zero(s) to run independent NodeJS services sounds very appealing.  I’ve been wanti">
-<meta name="twitter:image" content="http://pprimm.github.io/images/RASP_PI_ZERO_BESCHREIBUNG2.png">
+<meta name="twitter:title" content="Headless Raspberry Pi Zero Setup with Wifi Only">
+<meta name="twitter:description" content="This post is a follow up (or addendum, if you will) to Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8 which is a turorial for getting a Pi Zero running and connected to a">
+<meta name="twitter:image" content="http://pprimm.github.io/images/extfs-1.png">
     
 
     
@@ -219,7 +209,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-Pi-Zero-from-Ground-Zero" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-Pi-Zero-Headless-Wifi" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -227,7 +217,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8
+            Headless Raspberry Pi Zero Setup with Wifi Only
         </h1>
     
 
@@ -236,8 +226,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/10/02/Pi-Zero-from-Ground-Zero/">
-            <time datetime="2016-10-03T00:44:14.000Z" itemprop="datePublished">2016-10-02</time>
+        <a href="/2016/10/03/Pi-Zero-Headless-Wifi/">
+            <time datetime="2016-10-04T02:21:57.000Z" itemprop="datePublished">2016-10-03</time>
         </a>
     </div>
 
@@ -246,7 +236,7 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Headless-Ethernet/">Headless Ethernet</a>, <a class="tag-link" href="/tags/IoT/">IoT</a>, <a class="tag-link" href="/tags/NodeJS/">NodeJS</a>, <a class="tag-link" href="/tags/Raspberry-Pi-Zero/">Raspberry Pi Zero</a>, <a class="tag-link" href="/tags/Raspbian-Jessie-Lite/">Raspbian Jessie Lite</a>
+        <a class="tag-link" href="/tags/Headless-Wifi/">Headless Wifi</a>, <a class="tag-link" href="/tags/IoT/">IoT</a>, <a class="tag-link" href="/tags/Raspberry-Pi-Zero/">Raspberry Pi Zero</a>, <a class="tag-link" href="/tags/Raspbian-Jessie-Lite/">Raspbian Jessie Lite</a>
     </div>
 
                     </div>
@@ -257,100 +247,38 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>I love the idea of using the <a href="https://www.raspberrypi.org/products/pi-zero/" target="_blank" rel="external">Raspberry Pi Zero</a> as a <a href="https://en.wikipedia.org/wiki/Headless_computer" target="_blank" rel="external">headless</a> home automation IoT appliance.  Actually, using multiple Zero(s) to run independent NodeJS services sounds very appealing.  I’ve been wanting to do something like this for years.  The main thing that kept me from my plan to have my house running completely on the Raspberry Pi platform was my inability to easily and effectively setup a Pi for NodeJS; particularly, the Pi Zero due to its no on-board network interface.  I wanted to be able to start with a blank microSDHC and end up with an SSH enabled device connected to the network and running NodeJS without needing a keyboard and monitor during the process.  Here’s what I do to get my headless Zero(s) up and running in a very short amount of time.  </p>
-<p>Please refer to the following component descriptions during this tutorial:</p>
-<p>   <img src="/images/RASP_PI_ZERO_BESCHREIBUNG2.png" alt=""><br>Image courtesy cdn-reichelt.de and may be subject copyright</p>
+            <p>This <em>post</em> is a follow up (or addendum, if you will) to <a href="/2016/10/02/Pi-Zero-from-Ground-Zero/"><em>Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8</em></a> which is a turorial for getting a Pi Zero running and connected to a network without using a monitor, keyboard or mouse.  In this tutorial, we are going to address getting a Pi Zero running with only a Wifi dongle.  </p>
+<p>First, follow steps 1 - 4 in the <em>Install Raspbian Jessie Lite on 8GB microSDHC Card</em> section of my previous <a href="/2016/10/02/Pi-Zero-from-Ground-Zero/"><em>Headless Raspberry Pi Zero Setup</em></a> post.  Then, come back and perform the steps below for setting the wifi SSID and password.  You can then jump back to the original post and continue with the <em>Boot the Pi Zero and Connect with PuTTY</em> section.</p>
 <h2 id="The-Starting-Point"><a href="#The-Starting-Point" class="headerlink" title="The Starting Point"></a>The Starting Point</h2><ul>
 <li>Your Windows 8 PC with SD interface or adapter</li>
 <li>Pi Zero $5 <a href="https://www.adafruit.com/product/2885" target="_blank" rel="external">buy</a></li>
 <li>Blank 8GB microSDHC w/Adapter $7.50 <a href="https://www.amazon.com/gp/product/B00NICVTA2/" target="_blank" rel="external">buy</a></li>
-<li>Micro USB OTG Ethernet with 3 Port Hub $16.00 <a href="https://www.amazon.com/gp/product/B00L32UUJK/?th=1" target="_blank" rel="external">buy</a> I like this unit because it is supplied with a USB power-only cord and can be externally powered as well as USB powered.  This also supplies power to our Pi Zero; which is a plus.</li>
-<li>5V 2A USB Power Supply $6.95 or equivalent <a href="https://www.adafruit.com/products/1994" target="_blank" rel="external">buy</a></li>
+<li>Tiny OTG Adapter $2.95 <a href="https://www.adafruit.com/products/2910" target="_blank" rel="external">buy</a></li>
+<li>Wifi Dongle <a href="https://www.adafruit.com/products/814" target="_blank" rel="external">Adafruit $11.95</a> or <a href="https://smile.amazon.com/Edimax-EW-7811Un-150Mbps-Raspberry-Supports/dp/B003MTTJOY" target="_blank" rel="external">Amazon $9</a></li>
+<li>5V 2.4A Switching Power Supply w/ 20AWG 6’ MicroUSB Cable $7.95 or equivalent <a href="https://www.adafruit.com/product/1995" target="_blank" rel="external">buy</a></li>
 <li><em>(Optional)</em> Adafruit Pi Protector <a href="https://www.adafruit.com/products/2883" target="_blank" rel="external">buy</a></li>
 </ul>
-<p>If you want to purchase a microSDHC card with Jessie Lite already on it, get it <a href="https://www.adafruit.com/products/2820" target="_blank" rel="external">here</a> and skip straight to section <strong>Boot the Pi Zero and Connect with PuTTY</strong>.</p>
-<p><strong>Updated 2016-10-03:</strong> I added a very short tutorial for using a Wifi dongle instead of the USB Ethernet adapter like the one above.  If you want go wireless instead of using wired Ethernet, see <a href="/2016/10/03/Pi-Zero-Headless-Wifi/">the wifi post</a>.  The wifi tutorial shows only the steps needed to configure the wifi.  You will still need to follow all the steps in this tutorial.  I’ll make a note below as to when it’s appropriate to jump to the wifi tutorial.</p>
-<p>Given that a Pi 3 is $40+ with power adapters, etc., it’s a good way to go when you don’t need a quad-core and 1G RAM.</p>
 <h2 id="Software-You’ll-Need"><a href="#Software-You’ll-Need" class="headerlink" title="Software You’ll Need"></a>Software You’ll Need</h2><ul>
-<li>Raspbian Jessie Lite <a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">download</a> Extract the .img file</li>
-<li>SDFormatter <a href="https://www.sdcard.org/downloads/formatter_4/eula_windows/index.html" target="_blank" rel="external">download</a></li>
-<li>Win32 Disk Imager <a href="https://sourceforge.net/projects/win32diskimager/" target="_blank" rel="external">download</a></li>
-<li>PuTTY <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank" rel="external">download</a></li>
+<li>Paragon ExtFS for Windows <a href="https://www.paragon-software.com/home/extfs-windows-pro/index.html" target="_blank" rel="external">download</a></li>
 </ul>
-<h2 id="What-We’re-Going-To-Do"><a href="#What-We’re-Going-To-Do" class="headerlink" title="What We’re Going To Do"></a>What We’re Going To Do</h2><ol>
-<li>Install Raspbian Jessie Lite on 8GB microSDHC Card</li>
-<li>Boot the Pi Zero and Connect with PuTTY</li>
-<li>Install Git and NodeJS</li>
-</ol>
-<h1 id="Install-Raspbian-Jessie-Lite-on-8GB-microSDHC-Card"><a href="#Install-Raspbian-Jessie-Lite-on-8GB-microSDHC-Card" class="headerlink" title="Install Raspbian Jessie Lite on 8GB microSDHC Card"></a>Install Raspbian Jessie Lite on 8GB microSDHC Card</h1><p>Follow these simple steps to prepare your microSC Card:</p>
+<h2 id="Setting-the-Wifi-SSID-and-Password"><a href="#Setting-the-Wifi-SSID-and-Password" class="headerlink" title="Setting the Wifi SSID and Password"></a>Setting the Wifi SSID and Password</h2><p>Once we have the <a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">Raspbian Jessie Lite</a> image on our SDHC card, we can edit the _wpa<em>supplicant.conf</em> file using ExtFS for Windows.  We’re following just part of the directions for setting up a Raspberry Pi Wif from the command line from the official <a href="https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md" target="_blank" rel="external">Pi Help Topic</a>; except, we’re modifying the files before we do the fist boot.  So, follow these easy steps to make the appropriate modification(s) to this file:</p>
 <ol>
-<li><p>Download Raspbian Jessie Lite image in zip file format. <a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">download</a></p>
+<li><p>Download and install <a href="https://www.paragon-software.com/home/extfs-windows-pro/index.html" target="_blank" rel="external">ExtFS for Windows</a>.  After I installed ExtFS on my Windows 8 box, a driver icon showed up in the system tray.  Although this tool can create and modify partitions (and other things), we’re just using it to access the file system and modify a file.</p>
 </li>
-<li><p>Extract the 2016-05-27-raspbian-jessie-lite.img file.  The 2016-05-27 was the release at the time of this writing.</p>
+<li><p>With the SDHC Card plugged into your reader, double-click on the ExtFS icon that is in your system tray.  You should see something like this:</p>
+<p><img src="/images/extfs-1.png" alt=""></p>
+<p>ExtFS, if properly installed, should recognize the Ext volume and automatically mount as a drive letter in Windows Explorer.  You can select the volume and mount/unmount.  When you do, it will appear/disappear as a drive letter.  As you can see from the above screen capture, the SDHC card has mounted the Ext volume to drive letter [F:].  The “raw” SDHC card will show up in Explorer as a separate drive letter; mine was drive [E:].  </p>
 </li>
-<li><p>Format the SD card with SDFormatter.</p>
-<p><img src="/images/SDFormatter1.png" alt=""><br>Be sure the select the FORMAT SIZE ADJUSTMENT: ON like this:</p>
-<p><img src="/images/SDFormatter2.png" alt=""><br><strong><em>INSURE YOU HAVE SELECTED THE CORRECT DRIVE LETTER</em></strong></p>
+<li><p>We’re now going to modify the file [\etc\wpa_supplicant\wpa_supplicant.conf].  In Windows Explorer, go to the [\etc\wpa_supplicant] folder and open the [wpa_supplicant.conf] file with an appropriate editor.  I use the <a href="https://atom.io/" target="_blank" rel="external">Atom Editor</a>.  When I open the file for editing in Atom, the filed contents look like this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">country=GB</div><div class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</div><div class="line">update_config=1</div></pre></td></tr></table></figure>
+<p>I don’t care to make any changes here.  We want to go to the bottom of the file (after the <code>update_config=1</code> line) and add the following (obviously, modifying it to contain your specific SSID and password):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">network=&#123;</div><div class="line">    ssid=<span class="string">"your-ssid"</span></div><div class="line">    psk=<span class="string">"your-password"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Now, just save and close the file.</p>
 </li>
-<li><p>Run Win32 Disk Imager as administrator and write the 2016-05-27-raspbian-jessie-lite.img file to the SD Card.</p>
-<p><img src="/images/Win32DiskImager.png" alt=""><br><strong><em>AGAIN, INSURE YOU HAVE SELECTED THE CORRECT DRIVE LETTER</em></strong></p>
-</li>
-</ol>
-<p>Carl Recktenwald Jr. has a <a href="https://www.youtube.com/watch?v=AVM7QaSndf8" target="_blank" rel="external">YouTube Video</a> that shows using SDFormatter and Win32 Disk Imager.  You can watch up to 2:30 where then begins a boot using monitor, keyboard and mouse.  But, we’re going headless, so the remainder of that video doesn’t pertain to what we’re trying to accomplish.</p>
-<p><strong>Running with Wifi</strong>:  If you want to use a wifi dongle instead of the Ethernet adapter, perform the steps in my <a href="/2016/10/03/Pi-Zero-Headless-Wifi/">wifi tutorial</a> now.  Then, come back and continue with the next section for booting the Pi Zero.</p>
-<h1 id="Boot-the-Pi-Zero-and-Connect-with-PuTTY"><a href="#Boot-the-Pi-Zero-and-Connect-with-PuTTY" class="headerlink" title="Boot the Pi Zero and Connect with PuTTY"></a>Boot the Pi Zero and Connect with PuTTY</h1><p>Follow these steps to boot and connect to your Pi Zero over SSH:</p>
-<ol>
-<li><p>Insert the newly ripped SD Card in your Pi Zero.  The Card holder is just an interference fit socket; so, is doesn’t click or have the bounce-in/out function like some other Pi(s).</p>
-</li>
-<li><p>Connect the Micro USB Ethernet USB-HUB to the Zero’s Micro USB Data Port.  Make sure you are connecting to the data port and not the power-only port.  Refer to picture above.  Use the Ethernet adapter’s power cord to power the adapter and Pi Zero.  Jessie should automatically, by default, find the USB to Ethernet adapter, connect to the network and obtain an IP via DHCP.</p>
-</li>
-<li><p>After giving the Pi Zero a few minutes to perform the first boot, try to connect over SSH using PuTTY.  The easiest method, if it works, is to rely on the Bonjour Service which should be enabled on Windows 8 or exist because you are using an Apple piece of software that relies on Bonjour.  Try connecting over SSH using pi@raspberrypi.local on port 22.</p>
-<p><img src="/images/putty1.png" alt=""></p>
-<p>If connecting using the local domain works and PuTTY is connecting to the Pi Zero host for the first time, then you will see something like this:</p>
-<p><img src="/images/putty2.png" alt=""></p>
-<h4 id="If-you-don’t-see-the-above-warning-or-PuTTY-gives-you-an-error-message-that-it-can’t-open-the-connection-go-to-the-Finding-Your-Pi-Zero’s-IP-section-below-This-section-provides-several-methods-for-finding-the-IP-of-your-PI-Zero"><a href="#If-you-don’t-see-the-above-warning-or-PuTTY-gives-you-an-error-message-that-it-can’t-open-the-connection-go-to-the-Finding-Your-Pi-Zero’s-IP-section-below-This-section-provides-several-methods-for-finding-the-IP-of-your-PI-Zero" class="headerlink" title="If you don’t see the above warning or PuTTY gives you an error message that it can’t open the connection, go to the [Finding Your Pi Zero’s IP] section below.  This section provides several methods for finding the IP of your PI Zero."></a>If you don’t see the above warning or PuTTY gives you an error message that it can’t open the connection, go to the [Finding Your Pi Zero’s IP] section below.  This section provides several methods for finding the IP of your PI Zero.</h4><p>However, if you see this window, select [Yes] to continue and you will be presented with the login prompt.  The default password is [raspberry] (without the [ ]).</p>
-<p><img src="/images/putty3.png" alt=""></p>
-<p>Once you login, you should see something like this:</p>
-<p><img src="/images/putty4.png" alt=""></p>
-</li>
-<li><p>Open the Configuration Tool and make any changes you would like.  You do this by entering the following command in PuTTY terminal:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo raspi-config</div></pre></td></tr></table></figure>
-<p><strong>Updated 2016-10-03:</strong> <em>A RasPi user notified me that starting with Jessie 2016-05-10, a script will auto-expand the file system on first boot.  You don’t need to perform this step.  But, if you are interested in bringing up the Configuration Tool and looking around, you can go ahead and continue as a learning exercise; otherwise, jump down to step 5.</em></p>
-<p>Executing this command show you the configuration tool.  The only configuration item we’re going to do now is expand the file system.  Select the fist item [1. Expand Filesystem] and select [Enter].  The filesystem will be expanded to used the full size of the SD Card.</p>
-<p><img src="/images/raspi-config.png" alt=""></p>
-<p>Now, just scroll down and select [Finish].  If you are asked to reboot, say Yes.  You will be logged off and PuTTY will disconnect.  Give the Pi Zero time to reboot.  Then, reconnect with PuTTY and continue to the next step.</p>
-</li>
-<li><p>Perform Jessie updates by entering the following two (2) commands in the terminal; allowing a command to complete before continuing to the next.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get upgrade</div></pre></td></tr></table></figure>
+<li><p>Eject the SDHC card from your system.  I didn’t have to unmount the volume in ExtFS before ejecting the SDCH card.  </p>
 </li>
 </ol>
-<h1 id="Install-Git-and-NodeJS"><a href="#Install-Git-and-NodeJS" class="headerlink" title="Install Git and NodeJS"></a>Install Git and NodeJS</h1><p>Now we’re going to install Git and NodeJs.  Perform these steps:</p>
-<ol>
-<li><p>Install Git using the following command:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install git</div></pre></td></tr></table></figure>
-</li>
-<li><p>Install NodeJS using the following commands; allowing each to complete:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ wget https://nodejs.org/dist/v4.5.0/node-v4.5.0-linux-armv6l.tar.gz</div><div class="line">$ tar -xvf node-v4.5.0-linux-armv6l.tar.gz</div><div class="line">$ <span class="built_in">cd</span> node-v4.5.0-linux-armv6l</div><div class="line">$ sudo cp -R * /usr/<span class="built_in">local</span>/</div><div class="line">$ sudo reboot</div></pre></td></tr></table></figure>
-<ul>
-<li>After reboot, re-login and execute the following command to verify the NodeJS install.</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ node --version</div><div class="line">v4.5.0</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>Now we have a Raspberry Pi Zero connected to our network and running NodeJS; ready to clone a repository and get to work.  I hope this is useful for you.</p>
-<h1 id="Finding-Your-Pi-Zero’s-IP-if-raspberrypi-local-doesn’t-work"><a href="#Finding-Your-Pi-Zero’s-IP-if-raspberrypi-local-doesn’t-work" class="headerlink" title="Finding Your Pi Zero’s IP (if raspberrypi.local doesn’t work)"></a>Finding Your Pi Zero’s IP (if raspberrypi.local doesn’t work)</h1><p>We need to perform this step only if PuTTY can’t connect using [pi@raspberrypi.local].  In that case, there are several methods we can use to find the IP of our Pi Zero.  Try one of these methods:</p>
-<ul>
-<li><p>One of the easiest methods is to login to your router and look at the list of connected hosts.  This might give a clue as to the new IP; especially if the raspberrypi name is listed or your other hosts are listed by name.  If it’s not clear what the IP is, then try another method.</p>
-</li>
-<li><p>If you have an IP scanner, use it.  Chances are, if you have an IP scanner, you know how to use it and you are used to finding IPs of unknown hosts using this method.  We’re looking for an open port 22.  So, if your scanner supports particular port scans, this will focus the scan and likely give better results.</p>
-</li>
-<li><p>Use an nmap scan <a href="https://nmap.org/download.html" target="_blank" rel="external">download</a>.  Go to the nmap download page and scroll down to Microsoft Windows binaries and locate [nmap-7.30-setup.exe].  Download and install.  This is the Zenmap GUI for Windows.  Run the program and enter [nmap -p 22 10.10.101.0/24] in the command field as shown here (replacing my LAN IP, 10.10.101.0 in this case, with yours).  </p>
-<p><img src="/images/zenmap1.png" alt=""></p>
-<p>The Target field will be filled in automatically.  Select Scan and review the results in the [Nmap Output] tab.  You are looking for an open port 22 like this:</p>
-<p><img src="/images/zenmap2.png" alt=""></p>
-<p>Yay!  We found the Pi Zero at IP 10.10.101.43.  Write down your IP for future reference.  Then, go back to the boot section, item 3 and continue with the setup.</p>
-</li>
-</ul>
+<p>Now you can pickup with the <em>Boot the Pi Zero and Connect with PuTTY</em> section from the <a href="/2016/10/02/Pi-Zero-from-Ground-Zero/">original post</a>.  Good luck and I hope this helps you get your headless Pi Zero up and running with a Wifi dongle.</p>
 
         
         </div>
@@ -361,7 +289,7 @@
 
 </div>
 
-    <a data-url="http://pprimm.github.io/2016/10/02/Pi-Zero-from-Ground-Zero/" data-id="cituw21wh000164i043xq2kqw" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="http://pprimm.github.io/2016/10/03/Pi-Zero-Headless-Wifi/" data-id="cituw21vz000064i06jocqpmc" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -429,7 +357,7 @@
 
             
     
-        <a href="http://pprimm.github.io/2016/10/02/Pi-Zero-from-Ground-Zero/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://pprimm.github.io/2016/10/02/Pi-Zero-from-Ground-Zero/">Comentarios</a>
+        <a href="http://pprimm.github.io/2016/10/03/Pi-Zero-Headless-Wifi/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://pprimm.github.io/2016/10/03/Pi-Zero-Headless-Wifi/">Comentarios</a>
     
 
         </footer>
@@ -438,19 +366,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2016/10/03/Pi-Zero-Headless-Wifi/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Más nuevo</strong>
-            <div class="article-nav-title">
-                
-                    Headless Raspberry Pi Zero Setup with Wifi Only
-                
-            </div>
-        </a>
     
-    
-        <a href="/2016/10/02/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2016/10/02/Pi-Zero-from-Ground-Zero/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Más viejo</strong>
-            <div class="article-nav-title">Hello World</div>
+            <div class="article-nav-title">Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8</div>
         </a>
     
 </nav>
@@ -609,9 +528,9 @@
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://pprimm.github.io/2016/10/02/Pi-Zero-from-Ground-Zero/';
+            this.page.url = 'http://pprimm.github.io/2016/10/03/Pi-Zero-Headless-Wifi/';
         
-        this.page.identifier = 'Pi-Zero-from-Ground-Zero';
+        this.page.identifier = 'Pi-Zero-Headless-Wifi';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
