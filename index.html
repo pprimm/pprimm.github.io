@@ -242,7 +242,7 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>This <em>post</em> is a follow up (or addendum, if you will) to <a href="/2016/10/02/Pi-Zero-from-Ground-Zero/"><em>Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8</em></a> which is a turorial for getting a Pi Zero running and connected to a network without using a monitor, keyboard or mouse.  In this tutorial, we are going to address getting a Pi Zero running with only a Wifi dongle.  This is only ONE way to do this.  Your mileage may vary.</p>
+            <p>This <em>post</em> is a follow-up (or addendum, if you will) to <a href="/2016/10/02/Pi-Zero-from-Ground-Zero/"><em>Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8</em></a> which is a tutorial for getting a Pi Zero running and connected to a network without using a monitor, keyboard or mouse.  In this tutorial, we are going to address getting a Pi Zero running with only a Wifi dongle.  This is only ONE way to do this.  Your mileage may vary.</p>
 <p>First, follow steps 1 - 4 in the <em>Install Raspbian Jessie Lite on 8GB microSDHC Card</em> section of my previous <a href="/2016/10/02/Pi-Zero-from-Ground-Zero/"><em>Headless Raspberry Pi Zero Setup</em></a> post.  Then, come back and perform the steps below for setting the wifi SSID and password.  You can then jump back to the original post and continue with the <em>Boot the Pi Zero and Connect with PuTTY</em> section.</p>
 <h2 id="The-Starting-Point"><a href="#The-Starting-Point" class="headerlink" title="The Starting Point"></a>The Starting Point</h2><ul>
 <li>Your Windows 8 PC with SD interface or adapter</li>
@@ -262,7 +262,7 @@
 </li>
 <li><p>With the SDHC Card plugged into your reader, double-click on the ExtFS icon that is in your system tray.  You should see something like this:</p>
 <p><img src="/images/extfs-1.png" alt=""></p>
-<p>ExtFS, if properly installed, should recognize the Ext volume and automatically mount as a drive letter in Windows Explorer.  You can select the volume and mount/unmount.  When you do, it will appear/disappear as a drive letter.  As you can see from the above screen capture, the SDHC card has mounted the Ext volume to drive letter [F:].  The “raw” SDHC card will show up in Explorer as a separate drive letter; mine was drive [E:].  </p>
+<p>ExtFS, if properly installed, should recognize the Ext volume and automatically mount as a drive letter in Windows Explorer.  You can select the volume and mount/un-mount.  When you do, it will appear/disappear as a drive letter.  As you can see from the above screen capture, the SDHC card has mounted the Ext volume to drive letter [F:].  The “raw” SDHC card will show up in Explorer as a separate drive letter; mine was drive [E:].  </p>
 </li>
 <li><p>We’re now going to modify the file [\etc\wpa_supplicant\wpa_supplicant.conf].  In Windows Explorer, go to the [\etc\wpa_supplicant] folder and open the [wpa_supplicant.conf] file with an appropriate editor.  I use the <a href="https://atom.io/" target="_blank" rel="external">Atom Editor</a>.  When I open the file for editing in Atom, the filed contents look like this:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">country=GB</div><div class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</div><div class="line">update_config=1</div></pre></td></tr></table></figure>
@@ -270,7 +270,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">network=&#123;</div><div class="line">    ssid=<span class="string">"your-ssid"</span></div><div class="line">    psk=<span class="string">"your-password"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Now, just save and close the file.</p>
 </li>
-<li><p>Eject the SDHC card from your system.  I didn’t have to unmount the volume in ExtFS before ejecting the SDCH card.  </p>
+<li><p>Eject the SDHC card from your system.  I didn’t have to un-mount the volume in ExtFS before ejecting the SDCH card as this is a setting in ExtFS.  </p>
 </li>
 </ol>
 <p>Now you can pickup with the <em>Boot the Pi Zero and Connect with PuTTY</em> section from the <a href="/2016/10/02/Pi-Zero-from-Ground-Zero/">original post</a>.  Good luck and I hope this helps you get your headless Pi Zero up and running with a Wifi dongle.</p>
@@ -284,7 +284,7 @@
 
 </div>
 
-    <a data-url="http://pprimm.github.io/2016/10/03/Pi-Zero-Headless-Wifi/" data-id="citv0phpb0001woi06zkqsmcq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://pprimm.github.io/2016/10/03/Pi-Zero-Headless-Wifi/" data-id="cityymyta0000lki0s8nuvlvb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -504,7 +504,7 @@
 
 </div>
 
-    <a data-url="http://pprimm.github.io/2016/10/02/Pi-Zero-from-Ground-Zero/" data-id="citv0phpe0002woi058k9g6ia" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://pprimm.github.io/2016/10/02/Pi-Zero-from-Ground-Zero/" data-id="cityymyta0001lki043086fdz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -634,7 +634,7 @@
 
 </div>
 
-    <a data-url="http://pprimm.github.io/2016/10/02/hello-world/" data-id="citv0phoq0000woi0kham5v1z" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://pprimm.github.io/2016/10/02/hello-world/" data-id="cityymytp0003lki0u7p2725i" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
