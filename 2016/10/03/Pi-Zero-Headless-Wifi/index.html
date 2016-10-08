@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang=En>
+<html lang=en>
 <head>
     <meta charset="utf-8">
     
-    <title>Headless Raspberry Pi Zero Setup with Wifi Only | My Technology Blog</title>
+    <title>Headless Raspberry Pi Zero - Setup Wifi Directly on an SDHC Card on Windows 8 | My Technology Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="This post is a follow-up (or addendum, if you will) to Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8 which is a tutorial for getting a Pi Zero running and connected to a">
+    <meta name="description" content="This tutorial is a follow-up (or addendum, if you will) to Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8 which shows how to get a Pi Zero running and connected to a netw">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Headless Raspberry Pi Zero Setup with Wifi Only">
+<meta property="og:title" content="Headless Raspberry Pi Zero - Setup Wifi Directly on an SDHC Card on Windows 8">
 <meta property="og:url" content="http://pprimm.github.io/2016/10/03/Pi-Zero-Headless-Wifi/index.html">
 <meta property="og:site_name" content="My Technology Blog">
-<meta property="og:description" content="This post is a follow-up (or addendum, if you will) to Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8 which is a tutorial for getting a Pi Zero running and connected to a">
+<meta property="og:description" content="This tutorial is a follow-up (or addendum, if you will) to Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8 which shows how to get a Pi Zero running and connected to a netw">
 <meta property="og:image" content="http://pprimm.github.io/images/extfs-1.png">
-<meta property="og:updated_time" content="2016-10-06T23:12:33.473Z">
+<meta property="og:updated_time" content="2016-10-08T01:05:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Headless Raspberry Pi Zero Setup with Wifi Only">
-<meta name="twitter:description" content="This post is a follow-up (or addendum, if you will) to Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8 which is a tutorial for getting a Pi Zero running and connected to a">
+<meta name="twitter:title" content="Headless Raspberry Pi Zero - Setup Wifi Directly on an SDHC Card on Windows 8">
+<meta name="twitter:description" content="This tutorial is a follow-up (or addendum, if you will) to Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8 which shows how to get a Pi Zero running and connected to a netw">
 <meta name="twitter:image" content="http://pprimm.github.io/images/extfs-1.png">
     
 
@@ -217,7 +217,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            Headless Raspberry Pi Zero Setup with Wifi Only
+            Headless Raspberry Pi Zero - Setup Wifi Directly on an SDHC Card on Windows 8
         </h1>
     
 
@@ -233,6 +233,11 @@
 
 
                         
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Tutorial/">Tutorial</a>
+    </div>
+
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
@@ -247,9 +252,8 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>This <em>post</em> is a follow-up (or addendum, if you will) to <a href="/2016/10/02/Pi-Zero-from-Ground-Zero/"><em>Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8</em></a> which is a tutorial for getting a Pi Zero running and connected to a network without using a monitor, keyboard or mouse.  In this tutorial, we are going to address getting a Pi Zero running with only a Wifi dongle.  This is only ONE way to do this.  Your mileage may vary.</p>
-<p>First, follow steps 1 - 4 in the <em>Install Raspbian Jessie Lite on 8GB microSDHC Card</em> section of my previous <a href="/2016/10/02/Pi-Zero-from-Ground-Zero/"><em>Headless Raspberry Pi Zero Setup</em></a> post.  Then, come back and perform the steps below for setting the wifi SSID and password.  You can then jump back to the original post and continue with the <em>Boot the Pi Zero and Connect with PuTTY</em> section.</p>
-<h2 id="The-Starting-Point"><a href="#The-Starting-Point" class="headerlink" title="The Starting Point"></a>The Starting Point</h2><ul>
+            <p>This tutorial is a follow-up (or addendum, if you will) to <a href="/2016/10/02/Pi-Zero-from-Ground-Zero/"><em>Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8</em></a> which shows how to get a Pi Zero running and connected to a network without using a monitor, keyboard or mouse.  In this follow-up tutorial, we are going to address getting a Pi Zero running with only a Wifi dongle.  This is only ONE way to do this.  Your mileage may vary.</p>
+<h2 id="Equipment-You’ll-Need"><a href="#Equipment-You’ll-Need" class="headerlink" title="Equipment You’ll Need"></a>Equipment You’ll Need</h2><ul>
 <li>Your Windows 8 PC with SD interface or adapter</li>
 <li>Pi Zero $5 <a href="https://www.adafruit.com/product/2885" target="_blank" rel="external">buy</a></li>
 <li>Blank 8GB microSDHC w/Adapter $7.50 <a href="https://www.amazon.com/gp/product/B00NICVTA2/" target="_blank" rel="external">buy</a></li>
@@ -261,13 +265,15 @@
 <h2 id="Software-You’ll-Need"><a href="#Software-You’ll-Need" class="headerlink" title="Software You’ll Need"></a>Software You’ll Need</h2><ul>
 <li>Paragon ExtFS for Windows <a href="https://www.paragon-software.com/home/extfs-windows-pro/index.html" target="_blank" rel="external">download</a></li>
 </ul>
-<h2 id="Setting-the-Wifi-SSID-and-Password"><a href="#Setting-the-Wifi-SSID-and-Password" class="headerlink" title="Setting the Wifi SSID and Password"></a>Setting the Wifi SSID and Password</h2><p>Once we have the <a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">Raspbian Jessie Lite</a> image on our SDHC card, we can edit the _wpa<em>supplicant.conf</em> file using ExtFS for Windows.  We’re following just part of the directions for setting up a Raspberry Pi Wif from the command line from the official <a href="https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md" target="_blank" rel="external">Pi Help Topic</a>; except, we’re modifying the files before we do the fist boot.  So, follow these easy steps to make the appropriate modification(s) to this file:</p>
+<h2 id="Initial-Setup"><a href="#Initial-Setup" class="headerlink" title="Initial Setup"></a>Initial Setup</h2><p>First, follow steps 1 - 4 in the <em>Install Raspbian Jessie Lite on 8GB microSDHC Card</em> section of my previous <a href="/2016/10/02/Pi-Zero-from-Ground-Zero/"><em>Headless Raspberry Pi Zero Setup</em></a> post.  Then, come back and perform the steps below for setting the wifi SSID and password.  You can then jump back to the original post and continue with the <em>Boot the Pi Zero and Connect with PuTTY</em> section.</p>
+<h2 id="Setting-the-Wifi-SSID-and-Password"><a href="#Setting-the-Wifi-SSID-and-Password" class="headerlink" title="Setting the Wifi SSID and Password"></a>Setting the Wifi SSID and Password</h2><p>Once we have the <a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">Raspbian Jessie Lite</a> image on our SDHC card, we can edit the _wpa<em>supplicant.conf</em> file using ExtFS for Windows.  The basic steps for this process were derived the Pi Help topic post: <a href="https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md" target="_blank" rel="external">Setting Wifi Up via the Command Line</a>.  So, follow these easy steps to make the appropriate modification(s) to this file:</p>
 <ol>
 <li><p>Download and install <a href="https://www.paragon-software.com/home/extfs-windows-pro/index.html" target="_blank" rel="external">ExtFS for Windows</a>.  After I installed ExtFS on my Windows 8 box, a driver icon showed up in the system tray.  Although this tool can create and modify partitions (and other things), we’re just using it to access the file system and modify a file.</p>
 </li>
 <li><p>With the SDHC Card plugged into your reader, double-click on the ExtFS icon that is in your system tray.  You should see something like this:</p>
 <p><img src="/images/extfs-1.png" alt=""></p>
 <p>ExtFS, if properly installed, should recognize the Ext volume and automatically mount as a drive letter in Windows Explorer.  You can select the volume and mount/un-mount.  When you do, it will appear/disappear as a drive letter.  As you can see from the above screen capture, the SDHC card has mounted the Ext volume to drive letter [F:].  The “raw” SDHC card will show up in Explorer as a separate drive letter; mine was drive [E:].  </p>
+<p><strong>BONUS</strong>: Since we have the SDHC card mounted as a drive, we can take this opportunity to quickly do large file transfers for the Pi to access later. (Tip provided by <a href="https://twitter.com/danielbuentell0" target="_blank" rel="external">Daniel Buentello</a>)</p>
 </li>
 <li><p>We’re now going to modify the file [\etc\wpa_supplicant\wpa_supplicant.conf].  In Windows Explorer, go to the [\etc\wpa_supplicant] folder and open the [wpa_supplicant.conf] file with an appropriate editor.  I use the <a href="https://atom.io/" target="_blank" rel="external">Atom Editor</a>.  When I open the file for editing in Atom, the filed contents look like this:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">country=GB</div><div class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</div><div class="line">update_config=1</div></pre></td></tr></table></figure>
@@ -289,7 +295,7 @@
 
 </div>
 
-    <a data-url="http://pprimm.github.io/2016/10/03/Pi-Zero-Headless-Wifi/" data-id="cityymyta0000lki0s8nuvlvb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://pprimm.github.io/2016/10/03/Pi-Zero-Headless-Wifi/" data-id="ciu0ilk720000xki0csnksokp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -413,8 +419,8 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2016/10/03/Pi-Zero-Headless-Wifi/" class="title">Headless Raspberry Pi Zero Setup with Wifi Only</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tutorial/">Tutorial</a></p>
+                            <p class="item-title"><a href="/2016/10/03/Pi-Zero-Headless-Wifi/" class="title">Headless Raspberry Pi Zero - Setup Wifi Directly on an SDHC Card on Windows 8</a></p>
                             <p class="item-date"><time datetime="2016-10-04T02:21:57.000Z" itemprop="datePublished">2016-10-03</time></p>
                         </div>
                     </li>
@@ -432,7 +438,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tutorial/">Tutorial</a></p>
                             <p class="item-title"><a href="/2016/10/02/Pi-Zero-from-Ground-Zero/" class="title">Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8</a></p>
                             <p class="item-date"><time datetime="2016-10-03T00:44:14.000Z" itemprop="datePublished">2016-10-02</time></p>
                         </div>
@@ -463,6 +469,13 @@
 
     
         
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorial/">Tutorial</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
     
         
     <div class="widget-wrap">
