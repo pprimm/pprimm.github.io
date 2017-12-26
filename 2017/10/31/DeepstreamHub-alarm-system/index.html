@@ -3,14 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>My Technology Blog</title>
+    <title>Home Security Sytetm using Raspberry Pi Zero and deepstreamHub | My Technology Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="My Technology Blog">
-<meta property="og:url" content="http://pprimm.github.io/index.html">
+    <meta name="description" content="What is this?This project is a submission to the deepstreamHub Contest, Sept. 2017.  It is a realtime mobile UI demo demonstrating how to use the deepstream JavaScript client to interact with a home s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Home Security Sytetm using Raspberry Pi Zero and deepstreamHub">
+<meta property="og:url" content="http://pprimm.github.io/2017/10/31/DeepstreamHub-alarm-system/index.html">
 <meta property="og:site_name" content="My Technology Blog">
+<meta property="og:description" content="What is this?This project is a submission to the deepstreamHub Contest, Sept. 2017.  It is a realtime mobile UI demo demonstrating how to use the deepstream JavaScript client to interact with a home s">
+<meta property="og:image" content="http://pprimm.github.io/images/home-security-app.png">
+<meta property="og:updated_time" content="2017-12-26T19:19:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My Technology Blog">
+<meta name="twitter:title" content="Home Security Sytetm using Raspberry Pi Zero and deepstreamHub">
+<meta name="twitter:description" content="What is this?This project is a submission to the deepstreamHub Contest, Sept. 2017.  It is a realtime mobile UI demo demonstrating how to use the deepstream JavaScript client to interact with a home s">
+<meta name="twitter:image" content="http://pprimm.github.io/images/home-security-app.png">
     
 
     
@@ -183,16 +189,15 @@
 </aside>
 
             
-            <section id="main">
-    <article id="post-DeepstreamHub-alarm-system" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-DeepstreamHub-alarm-system" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
             <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/10/31/DeepstreamHub-alarm-system/">Home Security Sytetm using Raspberry Pi Zero and deepstreamHub</a>
+        <h1 class="article-title" itemprop="name">
+            Home Security Sytetm using Raspberry Pi Zero and deepstreamHub
         </h1>
     
 
@@ -226,11 +231,46 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><h2 id="What-is-this"><a href="#What-is-this" class="headerlink" title="What is this?"></a>What is this?</h2><p>This project is a submission to the <a href="https://www.collaborizm.com/thread/r1lTSRXSZ">deepstreamHub Contest, Sept. 2017</a>.  It is a realtime mobile UI demo demonstrating how to use the deepstream JavaScript client to interact with a home security system through deepstreamHub.  Here is the <a href="https://pprimm.github.io/ds-contest-material/">main repository</a> for the project.  The <a href="https://github.com/pprimm/ds-contest-provider">companion project</a> is a security system simulator that demonstrates how to create a <em>provider</em> for deepstreamHub using NodeJS and the same deepstream JavaScript client as the UI.  </p>
-<p>   <img src="/images/home-security-app.png" alt=""><br>Home Security App running in Safari on iPhone 6<br></p>
-            <p class="article-more-link">
-                <a href="/2017/10/31/DeepstreamHub-alarm-system/#more">Read More</a>
-            </p>
+            
+            <h2 id="What-is-this"><a href="#What-is-this" class="headerlink" title="What is this?"></a>What is this?</h2><p>This project is a submission to the <a href="https://www.collaborizm.com/thread/r1lTSRXSZ" target="_blank" rel="external">deepstreamHub Contest, Sept. 2017</a>.  It is a realtime mobile UI demo demonstrating how to use the deepstream JavaScript client to interact with a home security system through deepstreamHub.  Here is the <a href="https://pprimm.github.io/ds-contest-material/">main repository</a> for the project.  The <a href="https://github.com/pprimm/ds-contest-provider" target="_blank" rel="external">companion project</a> is a security system simulator that demonstrates how to create a <em>provider</em> for deepstreamHub using NodeJS and the same deepstream JavaScript client as the UI.  </p>
+<p>   <img src="/images/home-security-app.png" alt=""><br>Home Security App running in Safari on iPhone 6<br><a id="more"></a><br>A build is running at <a href="https://pprimm.github.io/ds-contest-material/">https://pprimm.github.io/ds-contest-material/</a>.  The app will not be responsive to user actions if the provider (mentioned) above is not running and connected to DeepstreamHub.  Here’s how to use the app:  After logging in, you’ll see the main Alarm System page which shows the system status (ie. Not Armed, Armed Away, etc.), the buttons used to arm/disarm and the overall status summary of the security zones.   In order for the system to be ready to arm, all zones must be Ready or Bypassed if Open or in Trouble.  Arm Away will countdown ten (10) seconds, then arm.  Arm Stay will arm immediately.  </p>
+<p>To view the zones list, select the ZONES button in the top right; you’ll be taken to the zones list page.  From here you can make selections on the top tab bar for filtering the zones you see by their status.  You can tap a zone item to cycle it’s status through Ready, Open and Trouble.  To bypass a zone, tap the toggle control.  The arm buttons will be disabled if any zones are Open or in Trouble.  It’s easy to tap the OPEN or TROUBLE tabs to bypass these zone(s).  You can also open multiple instances and see the effect that changing the zone status and/or bypassing zones has on the filtered zones list and the main Alarm System status page.</p>
+<p>Disclaimer:  This project is NOT designed to be referenced as best practices.</p>
+<h2 id="Why-is-it-here"><a href="#Why-is-it-here" class="headerlink" title="Why is it here?"></a>Why is it here?</h2><p>Well, the obvious reason is that it was created as a submission to the aforementioned design contest.   But, there’s a bit of background here.  I have been playing with using React/cerebral to create UX for home automation for a few months.  My original tech stack used MQTT over Web-sockets for real-time transport.  This worked pretty well because my back-end control system is MQTT driven.  However, I wanted to test an abstraction that allowed for more productivity and ease-of-design on the front-end; in other words, deepstream would be used for the front-end channel to separate/decouple messaging.  Anyhoo, the contest gave me the opportunity (<em>interpret</em>: the motivation) to produce a limited-scope solution to test deepstream in this scenario.</p>
+<h2 id="Tech-Stack"><a href="#Tech-Stack" class="headerlink" title="Tech Stack"></a>Tech Stack</h2><ul>
+<li><a href="https://deepstreamhub.com/" target="_blank" rel="external">deepstreamHub</a> &amp; <a href="https://deepstreamhub.com/docs/client-js/client/" target="_blank" rel="external">deepstream javascript client</a> </li>
+<li><a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a></li>
+<li><a href="http://cerebraljs.com/" target="_blank" rel="external">Cerebral for React for state management, effects and routing</a></li>
+<li><a href="https://material-ui-1dab0.firebaseapp.com/getting-started/installation/" target="_blank" rel="external">Material UI</a> to ease the UI design burden</li>
+</ul>
+<h2 id="A-Brief-Architectural-Overview-Commentary"><a href="#A-Brief-Architectural-Overview-Commentary" class="headerlink" title="A Brief Architectural Overview (Commentary)"></a>A Brief Architectural Overview (Commentary)</h2><p> <em>Warning: this is opionated</em>.  The concepts of React and Flux have made significant impacts on the dev community over the past few years.  Specifically, the state/action flow of Flux helped to shape perceptions of uni-directional flow.  I wanted to solve the problem of this particular contest (Realtime Security System) with what I term “full-stack-flux”; basically, flux concept from the front-end to back-end.  Please allow me to try and explain further.</p>
+<p> The View is React; so from that standpoint, we’re on-par with standard Flux.  From there we indroduce the concepts of Signals, Actions and State which come from the Cerebral project.   <a href="http://cerebraljs.com/docs/api/signal.html" target="_blank" rel="external">Signals</a> are triggered from both user interaction and the back-end and then, in turn, trigger <a href="http://cerebraljs.com/docs/api/action.html" target="_blank" rel="external">Actions</a> that either update the local UI <a href="http://cerebraljs.com/docs/api/state.html" target="_blank" rel="external">State</a> or send the action on to the back-end for processing.  It may be important to note that the Actions triggered by Signals are composable and provide a needed abstraction layer.  The pure UI has no idea of front-end or back-end state changes or processing, doesn’t care and ideally hold no state of its own.  The deepstreamHub provider listens for Actions (<a href="https://deepstreamhub.com/docs/client-js/pubsub-client-event/" target="_blank" rel="external">pub-sub Events</a> in deepstream) coming from the front end and/or other back-end services.  The Actions received are processed and may or may not produce a change in state (<a href="https://deepstreamhub.com/docs/client-js/datasync-record/" target="_blank" rel="external">Records</a> in deepstream).  These Record(s) changes then trigger Signals to be processed on the front-end as described above.  The flow is extremely easy to reason about. </p>
+<p> To give a concrete example “event” from our app, we’ll follow a progression that takes place when the user “taps” on a zone to toggle the zone bypass.  So, here’s what takes place:</p>
+<ul>
+<li>The user taps a toggle control on a particular security zone (the <code>&lt;Switch&gt;</code> component in the higher-order <code>&lt;ZoneListItem&gt;</code> component).</li>
+<li>The components <code>onChange()</code> event calls a <code>bypassPressed</code> signal with the ID of the zone.  This is the last the UI knows of the process.</li>
+<li>Though Cerebral, the signal calls the single <code>bypassPressed</code> action (it could call many actions that update both UI and call back-end actions independently).</li>
+<li>The bypassPress action calls the <code>action(...)</code> function on the deepstream provider; which ultimately performs a pub-sub event call to deepstreamHub.</li>
+<li>On the back-end, the deepstreamHub provider (written in NodeJS…our security system simulator) receives the pub-sub event because it is appropriately subscribed to the event.</li>
+<li>The simulator processes and validate the Event and, in this case, toggles the bypass property, if you will, in the appropriate Record and performs other processing now that the zone has been bypassed by the user.  This action then triggers multiple actions like: if the bypassed zone was keeping the system from going to the ready state, the system could then move to the ready state.  Because this is also a state change, the appropriate record would be updated and things would progress similarly as described below.</li>
+<li>Back on the front-end, Cerebral deepstreamHub provider is subscribed to received changes to that record, so it received this update and then triggers the, you guessed it, <code>dsUpdate</code> Signal which calls the <code>dsUpdate</code> Action.</li>
+<li>The <code>dsUpdate</code> Action the modifies the appropriate Crerebral state; this, in turn, triggers the UI updates because the appropriate components are “subscribed” to that portion of the state tree.</li>
+<li>AND, voilà, the user sees the toggle control change state (and any other state changes that occurred because of the simulator updates).</li>
+</ul>
+<h2 id="Possible-Improvements-what-I-would-do-from-here-if-this-were-a-real-app"><a href="#Possible-Improvements-what-I-would-do-from-here-if-this-were-a-real-app" class="headerlink" title="Possible Improvements (what I would do from here if this were a real app)"></a>Possible Improvements (what I would do from here if this were a real app)</h2><p>There are many improvement that could be made to make this app better.  Improvements to structure, naming convention, etc. would be a first step.  Really, this app was slung together quickly in order to meet a deadline for contest entry.  So, here are some things I would do if this were a real app:</p>
+<ul>
+<li>Add DeepstreamHub User Authorization and Permissions.  Obvious permissions would be to prevent UI client(s) from modifying Records in any way because these client should only be able to trigger Actions (as described above) and prevent them from listening to corresponding Actions.</li>
+<li>Refactor React code.  Possibly add styled-components (‘cause I love it).  I am not a front-end coder and not very experienced in HTML/CSS; there is likely <em>A LOT</em> of room for improvement here.</li>
+<li>Refactor deepstream client provider by adding a deepstream cerebral module to handle interaction between the app and the deepstream client cerebral provider.  In addition to exposing the core deepstream client api through the provider in a cerebral-ish way, a signal/action/state behavior layer might be exposed as well.</li>
+<li>Analyze refactoring the cerebral app state by investigating the effects/boundaries of separating ui specific state from device specific state.  Effects here would be very beneficial in a large app with many pages/state/user interactions.</li>
+<li>Analyze ramifications of multiple users performing multiple actions at the same time (address scaling).</li>
+<li>Improve the UX (highly subjective, but, this UX is marginal)</li>
+<li>The back-end device would be based on a real security system implementation to the API could change dramatically.</li>
+</ul>
+<p>This project was bootstrapped with <a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="external">Create React App</a>.</p>
+<p>Below you will find some information on how to perform common tasks.</p>
+<p>You can find the most recent version of this guide <a href="https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md" target="_blank" rel="external">here</a>.</p>
+
         
         </div>
         <footer class="article-footer">
@@ -314,274 +354,30 @@
         </footer>
     </div>
     
-</article>
-
-
-
-    <article id="post-Pi-Zero-Headless-Wifi" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
         
-        
-            <header class="article-header">
-                
+<nav id="article-nav">
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/10/03/Pi-Zero-Headless-Wifi/">Headless Raspberry Pi Zero - Setup Wifi Directly on an SDHC Card on Windows 8</a>
-        </h1>
     
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/10/03/Pi-Zero-Headless-Wifi/">
-            <time datetime="2016-10-04T02:21:57.000Z" itemprop="datePublished">2016-10-03</time>
+        <a href="/2016/10/03/Pi-Zero-Headless-Wifi/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Headless Raspberry Pi Zero - Setup Wifi Directly on an SDHC Card on Windows 8</div>
         </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Tutorial/">Tutorial</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Headless-Wifi/">Headless Wifi</a>, <a class="tag-link" href="/tags/IoT/">IoT</a>, <a class="tag-link" href="/tags/Raspberry-Pi-Zero/">Raspberry Pi Zero</a>, <a class="tag-link" href="/tags/Raspbian-Jessie-Lite/">Raspbian Jessie Lite</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>This tutorial is a follow-up (or addendum, if you will) to <a href="/2016/10/02/Pi-Zero-from-Ground-Zero/"><em>Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8</em></a> which shows how to get a Pi Zero running and connected to a network without using a monitor, keyboard or mouse.  In this follow-up tutorial, we are going to address getting a Pi Zero running with only a Wifi dongle.  This is only ONE way to do this.  Your mileage may vary.<br></p>
-            <p class="article-more-link">
-                <a href="/2016/10/03/Pi-Zero-Headless-Wifi/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://pprimm.github.io/2016/10/03/Pi-Zero-Headless-Wifi/" data-id="cjbn4funj00000oi0xw0a8tpd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
     
-        <a href="http://pprimm.github.io/2016/10/03/Pi-Zero-Headless-Wifi/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://pprimm.github.io/2016/10/03/Pi-Zero-Headless-Wifi/">Comments</a>
-    
+</nav>
 
-        </footer>
-    </div>
+
     
 </article>
 
 
-
-    <article id="post-Pi-Zero-from-Ground-Zero" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/10/02/Pi-Zero-from-Ground-Zero/">Headless Raspberry Pi Zero Setup with Ethernet from Ground Zero on Windows 8</a>
-        </h1>
     
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/10/02/Pi-Zero-from-Ground-Zero/">
-            <time datetime="2016-10-03T00:44:14.000Z" itemprop="datePublished">2016-10-02</time>
-        </a>
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Tutorial/">Tutorial</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Headless-Ethernet/">Headless Ethernet</a>, <a class="tag-link" href="/tags/IoT/">IoT</a>, <a class="tag-link" href="/tags/NodeJS/">NodeJS</a>, <a class="tag-link" href="/tags/Raspberry-Pi-Zero/">Raspberry Pi Zero</a>, <a class="tag-link" href="/tags/Raspbian-Jessie-Lite/">Raspbian Jessie Lite</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>I love the idea of using the <a href="https://www.raspberrypi.org/products/pi-zero/">Raspberry Pi Zero</a> as a <a href="https://en.wikipedia.org/wiki/Headless_computer">headless</a> home automation IoT appliance.  Actually, using multiple Zero(s) to run independent NodeJS services sounds very appealing.  I’ve been wanting to do something like this for years.  The main thing that kept me from my plan to have my house running completely on the Raspberry Pi platform was my inability to easily and effectively setup a Pi for NodeJS; particularly, the Pi Zero due to its no on-board network interface.  I wanted to be able to start with a blank microSDHC and end up with an SSH enabled device connected to the network and running NodeJS without needing a keyboard and monitor during the process.  Here’s what I do to get my headless Zero(s) up and running in a very short amount of time.<br></p>
-            <p class="article-more-link">
-                <a href="/2016/10/02/Pi-Zero-from-Ground-Zero/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://pprimm.github.io/2016/10/02/Pi-Zero-from-Ground-Zero/" data-id="cjbn4funt00010oi090b1v5bp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
+</section>
     
-        <a href="http://pprimm.github.io/2016/10/02/Pi-Zero-from-Ground-Zero/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://pprimm.github.io/2016/10/02/Pi-Zero-from-Ground-Zero/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
 
 </section>
             
@@ -730,11 +526,13 @@
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = 'undefined';
+            this.page.url = 'http://pprimm.github.io/2017/10/31/DeepstreamHub-alarm-system/';
+        
+        this.page.identifier = 'DeepstreamHub-alarm-system';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'pprimmsr' + '.disqus.com/count.js';
+        s.src = '//' + 'pprimmsr' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
